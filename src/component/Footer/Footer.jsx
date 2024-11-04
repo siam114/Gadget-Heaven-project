@@ -7,8 +7,7 @@ const Footer = () => {
         <h4 className="text-3xl font-bold pb-3">Gadget Heaven</h4>
         <p>Leading the way in cutting-edge technology and innovation.</p>
       </div>
-
-
+      
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 sm:place-items-center ml-10 sm:ml-0">
         <div className="text-gray-500 text-base">
             <h5 className="text-xl font-semibold text-black pb-3">Services</h5>

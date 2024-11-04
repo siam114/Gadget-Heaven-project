@@ -1,6 +1,6 @@
 [
     {
-      "product_id": "P001",
+      "product_id": 1,
       "product_title": "Apple MacBook Pro 14",
       "product_image": "https://i.ibb.co.com/pfk9WqK/Apple-Mac-Book-Pro-14.jpg",
       "category": "Computers",
@@ -17,7 +17,7 @@
       "rating": 4.9
     },
     {
-      "product_id": "P002",
+      "product_id": 2,
       "product_title": "Samsung Galaxy S23 Ultra",
       "product_image": "https://i.ibb.co.com/z2psfCb/Samsung-Galaxy-S23-Ultra.jpg",
       "category": "Phones",
@@ -34,7 +34,7 @@
       "rating": 4.7
     },
     {
-      "product_id": "P003",
+      "product_id": 3,
       "product_title": "Google Pixel Watch",
       "product_image": "https://i.ibb.co.com/8sPQ4zD/Google-Pixel-Watch.jpg",
       "category": "Smart Watches",
@@ -51,7 +51,7 @@
       "rating": 4.3
     },
     {
-      "product_id": "P004",
+      "product_id": 4,
       "product_title": "Anker PowerCore",
       "product_image": "https://i.ibb.co.com/Tk1zVWb/images-2.jpg",
       "category": "Smart Watches",
@@ -68,7 +68,7 @@
       "rating": 4.6
     },
     {
-      "product_id": "P005",
+      "product_id": 5,
       "product_title": "Dell XPS 13",
       "product_image": "https://i.ibb.co.com/smttnvX/Dell-XPS-13.jpg",
       "category": "Computers",
@@ -85,7 +85,7 @@
       "rating": 4.8
     },
     {
-      "product_id": "P006",
+      "product_id": 6,
       "product_title": "iPhone 15 Pro",
       "product_image": "https://i.ibb.co.com/pjYwVjp/i-Phone-15-Pro.jpg",
       "category": "Phones",
@@ -102,7 +102,7 @@
       "rating": 4.9
     },
     {
-      "product_id": "P007",
+      "product_id": 7,
       "product_title": "Samsung Galaxy Watch 6",
       "product_image": "https://i.ibb.co.com/GQn26Wv/Samsung-Galaxy-Watch-6.jpg",
       "category": "Smart Watches",
@@ -119,7 +119,7 @@
       "rating": 4.5
     },
     {
-      "product_id": "P008",
+      "product_id": 8,
       "product_title": "iphone 10",
       "product_image": "https://i.ibb.co.com/vYzGd4f/Phones.jpg",
       "category": "Phones",
@@ -136,7 +136,7 @@
       "rating": 4.4
     },
     {
-      "product_id": "P009",
+      "product_id": 9,
       "product_title": "HP Spectre x360",
       "product_image": "https://i.ibb.co.com/KsKf4Jg/HP-Spectre-x360.jpg",
       "category": "Computers",
@@ -153,7 +153,7 @@
       "rating": 4.7
     },
     {
-        "product_id": "P010",
+        "product_id": 10,
         "product_title": "asus vivobook",
         "product_image": "https://i.ibb.co.com/HNyXTkL/asus.webp",
         "category": "Computers",

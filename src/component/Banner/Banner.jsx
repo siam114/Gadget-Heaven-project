@@ -7,7 +7,7 @@ const Banner = () => {
       <div className="border-2 p-2 rounded-md mx-2">
         <div className="hero bg-[#9538E2] text-white py-5 rounded-md ">
           <div className="hero-content text-center">
-            <div className="max-w-2xl sm:pb-36">
+            <div className="max-w-2xl sm:pb-36 pb-40">
               <h1 className="text-4xl font-bold pt-5">
                 Upgrade Your Tech Accessorize with Gadget Heaven Accessories
               </h1>

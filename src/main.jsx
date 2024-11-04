@@ -9,6 +9,7 @@ import Root from './component/Root/Root';
 import ErrorPage from './component/ErrorPage/ErrorPage';
 import Home from './component/Home/Home';
 import ProductDetail from './component/ProductDetail/ProductDetail';
+import Dashboard from './component/Dashboard/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
       {
         path: 'products/:Id',
         element: <ProductDetail/>,
+        loader: ()=> fetch('/fakeData.json')
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard/>,
         loader: ()=> fetch('/fakeData.json')
       }
     ]

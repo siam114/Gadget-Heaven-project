@@ -1,7 +1,8 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import imageCart from '../../assets/cart.png'
-import imageHeart from '../../assets/heart.png'
+import imageCart from "../../assets/cart.png";
+import imageHeart from "../../assets/heart.png";
+import { addToStoreCartList, addToStoreWishList } from "../../utility/addToCart";
 
 const ProductDetail = () => {
   const { Id } = useParams();
@@ -10,14 +11,15 @@ const ProductDetail = () => {
 
   const product = data.find((product) => product.product_id === parseInt(Id));
 
-  const {
-    product_image,
-    product_title,
-    price,
-    description,
-    specification,
-    rating,
-  } = product;
+  const {product_id, product_image, product_title, price, description, specification, rating,} = product;
+
+  const handleAddToCart = (id) =>{
+        addToStoreCartList(id);
+  }
+
+  const handleWishList =(id) =>{
+       addToStoreWishList(id);
+  }
   return (
     <div>
       <div className="text-white bg-[#9538E2] text-center py-10 ">
@@ -39,20 +41,35 @@ const ProductDetail = () => {
               <h3 className="text-2xl font-bold">{product_title}</h3>
               <p className="pt-3 text-lg font-semibold">Price: {price}$</p>
               <div className="bg-[#2f9c0828] rounded-full border border-[#309C08] w-28 text-center my-3">
-               <p className="text-[#309C08]  px-3 py-1">In Stock</p>
+                <p className="text-[#309C08]  px-3 py-1">In Stock</p>
               </div>
               <p className="pt-3">{description}</p>
               <div>
-                 <h5 className="font-semibold py-3 text-lg">Specification : </h5>
-                {
-                    specification.map((specification, index) => <ul><li key={index}>{index+1}. {specification}</li></ul>)
-                }
-                </div>
-              <p className="pt-3"><span className="font-bold">Rating :</span> {rating}</p>
+                <h5 className="font-semibold py-3 text-lg">Specification : </h5>
+                {specification.map((specification, index) => (
+                  <ul>
+                    <li key={index}>
+                      {index + 1}. {specification}
+                    </li>
+                  </ul>
+                ))}
+              </div>
+              <p className="pt-3">
+                <span className="font-bold">Rating :</span> {rating}
+              </p>
 
               <div className="py-5 flex items-center gap-2">
-              <button className="border-2 bg-[#9538E2] text-white px-3 py-1 rounded-full">Add To Card <img className="inline-flex items-center justify-center w-5 h-5" src={imageCart} alt="" /></button>
-              <button className="border-2 p-1 rounded-full"><img className="w-5 h-5 " src={imageHeart} alt="" /></button>
+                <button onClick={() => handleAddToCart(product_id)} className="border-2 bg-[#9538E2] text-white px-3 py-1 rounded-full">
+                  Add To Card{" "}
+                  <img 
+                    className="inline-flex items-center justify-center w-5 h-5"
+                    src={imageCart}
+                    alt=""
+                  />
+                </button>
+                <button onClick={() => handleWishList(product_id)} className="border-2 p-1 rounded-full hover:bg-[#9538E2]">
+                  <img className="w-5 h-5 " src={imageHeart} alt="" />
+                </button>
               </div>
             </div>
           </div>

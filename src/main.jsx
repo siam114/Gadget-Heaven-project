@@ -10,20 +10,21 @@ import ErrorPage from './component/ErrorPage/ErrorPage';
 import Home from './component/Home/Home';
 import ProductDetail from './component/ProductDetail/ProductDetail';
 import Dashboard from './component/Dashboard/Dashboard';
+import Statistic from './component/Statistic/Statistic';
+import { ProductProvider } from './context/ProductContext';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root/>,
-    errorElement:<ErrorPage/>,
+    // errorElement:<ErrorPage/>,
     children :[
       {
         path: '/',
         element : <Home/>,
         loader: ()=> fetch('/category.json'),
-        children:[
-          
-        ]
+       
       },
       {
         path: 'products/:Id',
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         path: '/dashboard',
         element: <Dashboard/>,
         loader: ()=> fetch('/fakeData.json')
+      },
+      {
+        path: '/statistic',
+        element: <Statistic/>,
+        loader: ()=> fetch('/fakeData.json')
       }
     ]
   },
@@ -41,6 +47,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <ProductProvider><RouterProvider router={router}/></ProductProvider>
   </StrictMode>,
 )

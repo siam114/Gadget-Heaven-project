@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "localforage": "^1.10.0",
     "match-sorter": "^7.0.0",
     "my-assignment-8-gadget-heaven-project": "file:",

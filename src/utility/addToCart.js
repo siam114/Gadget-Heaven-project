@@ -22,7 +22,7 @@ const addToStoreCartList = (id) =>{
 }
 
 const getStoreWishList = () =>{
-    const storedListStr = localStorage.getItem('cart');
+    const storedListStr = localStorage.getItem('wish');
     if(storedListStr){
         const storedList = JSON.parse(storedListStr);
         return storedList;

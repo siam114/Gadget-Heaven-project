@@ -5,9 +5,18 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const links = <>
-        <li className="text-lg"><NavLink to="/" style={{ background: 'transparent', color: '#4B5563'}}>Home</NavLink></li>
-        <li className="text-lg "><NavLink to="/statistic" style={{ background: 'transparent', color: '#4B5563'}}>Statistics</NavLink></li>
-        <li className="text-lg "><NavLink to="/dashboard" style={{ background: 'transparent', color: '#4B5563'}}>Dashboard</NavLink></li>
+        <li className="text-lg"><NavLink  to="/" style={({ isActive }) => ({
+                    background: isActive ? '#E5E7EB' : 'transparent',
+                    color: isActive ? '#1F2937' : '#4B5563'
+                })}>Home</NavLink></li>
+        <li className="text-lg "><NavLink to="/statistic" style={({ isActive }) => ({
+                    background: isActive ? '#E5E7EB' : 'transparent',
+                    color: isActive ? '#1F2937' : '#4B5563'
+                })}>Statistics</NavLink></li>
+        <li className="text-lg "><NavLink to="/dashboard" style={({ isActive }) => ({
+                    background: isActive ? '#E5E7EB' : 'transparent',
+                    color: isActive ? '#1F2937' : '#4B5563'
+                })}>Dashboard</NavLink></li>
     </>
   return (
     <div className="navbar bg-base-100">

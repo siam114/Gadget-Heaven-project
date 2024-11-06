@@ -55,8 +55,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="flex border mr-2 p-1 rounded-full"><IoCartOutline className="size-6 text-black"/><span className="absolute right-40 top-2">{cart.length}</span></button>
-        <button className="border p-1 rounded-full"><CiHeart className="size-6 text-black"/><span className="absolute right-28 top-2">{wishList.length}</span></button>
+        <button className="flex border mr-2 p-1 rounded-full"><IoCartOutline className="size-6 text-black"/><span className="absolute right-28 top-2">{cart.length}</span></button>
+        <button className="border p-1 rounded-full"><CiHeart className="size-6 text-black"/><span className="absolute right-16 top-2">{wishList.length}</span></button>
       </div>
     </div>
   );

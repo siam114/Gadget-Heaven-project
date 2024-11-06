@@ -6,6 +6,7 @@ import { useProduct } from "../../context/ProductContext";
 
 const Products = () => {
   const { products } = useProduct();
+  console.log(products)
   const category = useLoaderData();
   console.log(category);
   const [selected, setSelected] = useState(1);

@@ -2,24 +2,44 @@ import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import imageCart from "../../assets/cart.png";
 import imageHeart from "../../assets/heart.png";
-import { addToStoreCartList, addToStoreWishList } from "../../utility/addToCart";
+import {
+  addToStoreCartList,
+  addToStoreWishList,
+} from "../../utility/addToCart";
+import { useProduct } from "../../context/ProductContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductDetail = () => {
+  const notifyCart = () => toast.success("Add to Cart", {position: "top-center", autoClose:1000});
+  const notifyWishList = () => toast.success("Add to WishList", {position: "top-center", autoClose:1000});
   const { Id } = useParams();
 
   const data = useLoaderData();
 
+  const { setCart, setWishList } = useProduct();
+
   const product = data.find((product) => product.product_id === parseInt(Id));
 
-  const {product_id, product_image, product_title, price, description, specification, rating,} = product;
+  const {
+    product_id,
+    product_image,
+    product_title,
+    price,
+    description,
+    specification,
+    rating,
+  } = product;
 
-  const handleAddToCart = (id) =>{
-        addToStoreCartList(id);
-  }
+  const handleAddToCart = (id) => {
+    addToStoreCartList(id);
+    notifyCart()
+  };
 
-  const handleWishList =(id) =>{
-       addToStoreWishList(id);
-  }
+  const handleWishList = (id) => {
+    addToStoreWishList(id);
+    notifyWishList()
+  };
   return (
     <div>
       <div className="text-white bg-[#9538E2] text-center py-10 ">
@@ -47,8 +67,8 @@ const ProductDetail = () => {
               <div>
                 <h5 className="font-semibold py-3 text-lg">Specification : </h5>
                 {specification.map((specification, index) => (
-                  <ul>
-                    <li key={index}>
+                  <ul key={index}>
+                    <li>
                       {index + 1}. {specification}
                     </li>
                   </ul>
@@ -59,15 +79,33 @@ const ProductDetail = () => {
               </p>
 
               <div className="py-5 flex items-center gap-2">
-                <button onClick={() => handleAddToCart(product_id)} className="border-2 bg-[#9538E2] text-white px-3 py-1 rounded-full">
+                <button
+                  onClick={() => {
+                    setCart((prev) => {
+                      return [...new Set([...prev, product])];
+                    });
+                    handleAddToCart(product_id);
+                    
+                  }}
+                  className="border-2 bg-[#9538E2] text-white px-3 py-1 rounded-full"
+                >
                   Add To Card{" "}
-                  <img 
+                  <img
                     className="inline-flex items-center justify-center w-5 h-5"
                     src={imageCart}
                     alt=""
                   />
                 </button>
-                <button onClick={() => handleWishList(product_id)} className="border-2 p-1 rounded-full hover:bg-[#9538E2]">
+                <button
+                  onClick={() => {
+                    setWishList((prev) => {
+                      return [...new Set([...prev, product])];
+                    });
+                    handleWishList(product_id);
+                   
+                  }}
+                  className="border-2 p-1 rounded-full hover:bg-[#9538E2]"
+                >
                   <img className="w-5 h-5 " src={imageHeart} alt="" />
                 </button>
               </div>
@@ -75,6 +113,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };

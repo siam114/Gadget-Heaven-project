@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const HomeNavbar = () => {
   const links = (
@@ -9,12 +10,12 @@ const HomeNavbar = () => {
         </NavLink>
       </li>
       <li className="text-lg ">
-        <NavLink style={{ background: "transparent", color: "#4B5563" }}>
+        <NavLink to="/statistic" style={{ background: "transparent", color: "#4B5563" }}>
           Statistics
         </NavLink>
       </li>
       <li className="text-lg ">
-        <NavLink style={{ background: "transparent", color: "#4B5563" }}>
+        <NavLink to="/dashboard" style={{ background: "transparent", color: "#4B5563" }}>
           Dashboard
         </NavLink>
       </li>
@@ -52,14 +53,14 @@ const HomeNavbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
+      {/* <div className="navbar-end">
         <a className="w-10 h-10 border mr-2 p-1 rounded-full">
           <img src={image} alt="" />
         </a>
         <a className="w-9 h-9 border p-1 rounded-full">
           <img src={heartImg} alt="" />
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };

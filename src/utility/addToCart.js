@@ -22,7 +22,7 @@ const addToStoreCartList = (id) =>{
 }
 
 const getStoreWishList = () =>{
-    const storedListStr = localStorage.getItem('wish');
+    const storedListStr = localStorage.getItem('wishList');
     if(storedListStr){
         const storedList = JSON.parse(storedListStr);
         return storedList;
@@ -40,9 +40,20 @@ const addToStoreWishList = (id) =>{
     else{
         storedList.push(id);
         const storedListStr = JSON.stringify(storedList);
-        localStorage.setItem('cart', storedListStr);
+        localStorage.setItem('wishList', storedListStr);
     }
 }
 
+const deleteFromWishList = (id) =>{
+    const storedList = getStoreWishList();
+    const filtered =  storedList.filter(item=>item!=id)
+    localStorage.setItem('wishList', JSON.stringify(filtered));
+}
+const deleteFromCartList = (id) =>{
+    const storedList = getStoreCartList();
+    const filtered =  storedList.filter(item=>item!=id)
+    localStorage.setItem('cart', JSON.stringify(filtered));
+}
 
-export {addToStoreCartList , addToStoreWishList, getStoreCartList}
+
+export {addToStoreCartList , addToStoreWishList, getStoreCartList, deleteFromCartList, deleteFromWishList}

@@ -22,3 +22,23 @@ Gadget Heaven: Your one-stop shop for the latest tech! Discover a world of cutti
 1.**Context API** : Used for global state management to store and share data across components without needing to pass props manually. For example, the ProductContext provides setCart and setWishList functions, making it easier to manage cart and wishlist data across multiple components in your project.
 
 2.**Local Storage** : Functions like addToStoreCartList and addToStoreWishList indicate that local storage is being used to persist cart and wishlist items.This enables data persistence, allowing users to retain their cart and wishlist data even after refreshing the page or reopening the site.
+
+---
+
+## How to Run Locally
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-repo/Gadget-Heaven.git
+   cd Gadget-Heaven
+2. **Install dependencies:**:
+   ```bash
+   npm install
+3. **Start the development server:**:
+   ```bash
+   npm run dev 
+2. **To build for production::**:
+   ```bash
+   npm run build
+   
+---
